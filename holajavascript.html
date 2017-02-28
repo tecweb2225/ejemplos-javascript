@@ -14,19 +14,34 @@
         window.document.write("<h1 style=\"color:red;\">Me gusta JavaScript</h1>")
         window.console.log('Hola consola')
         var lenguajes = ['HTML', 'CSS', 'JavaScript', 'PHP']
-        imprimir(lenguajes)
+        var otros = ['C++', 'Java', 'Python']
 
+        document.write('Lenguajes <br>')
+        imprimir(lenguajes)
+        document.write('Otros <br>')
+        imprimir(otros)
+        //ejemplo de concatenar
+        document.write('Concatenacion <br>')
+        imprimir(lenguajes.concat(otros))
+
+        document.write('Lenguajes = ' + lenguajes.join('-') + '<br>')
+        document.write('Otros = ' + otros.join(' ') + '<br>')
+
+        function imprimeRenglon(elemento, indice, arreglo)  {
+                document.write('<tr>')
+                document.write('<td style="border:solid 0.5px">')
+                document.write(indice)
+                document.write('</td>')
+                document.write('<td style="border:solid 0.5px">')
+                document.write(arreglo[indice])
+                document.write('</td>')
+                document.write('</tr>')    
+        }
 
         function imprimir(tabla)
         {
             document.write('<table>')
-            for (var i = 0; i < tabla.length; i++)  {  
-                document.write('<tr>')
-                document.write('<td style="border:solid 0.5px">')
-                document.write(tabla[i])
-                document.write('</td>')
-                document.write('</tr>')
-            }
+            tabla.forEach(imprimeRenglon)
             document.write('</table>')
         }
     </script>
